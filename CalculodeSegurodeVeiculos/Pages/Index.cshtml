@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Relatório de Seguros</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Valor do Seguro</th>
+            <!-- Adicione outras colunas conforme necessário -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var seguro in Model.Seguros)
+        {
+            <tr>
+                <td>@seguro.Id</td>
+                <td>@seguro.ValorSeguro.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Média dos Valores de Seguro: @Model.Media.ToString("C")
